@@ -12,4 +12,21 @@ export class ChangeController {
     const { monto, monedaOrigen, monedaDestino } = changeRequest;
     return this.changeService.changeMoney(monto, monedaOrigen, monedaDestino);
   }
+  @Post('/update-exchange-rate')
+  async updateExchangeRate(@Body() updateRequest: any): Promise<any> {
+    const { currency, newRate } = updateRequest;
+    const updated = this.changeService.updateExchangeRate(currency, newRate);
+
+    if (updated) {
+      return {
+        status: 'Success',
+        message: `Tasa de cambio para ${currency} actualizada correctamente.`,
+      };
+    } else {
+      return {
+        status: 'Error',
+        message: `La moneda ${currency} no existe o no es admitida.`,
+      };
+    }
+  }
 }

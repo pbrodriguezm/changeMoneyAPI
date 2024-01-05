@@ -38,4 +38,11 @@ export class ChangeService {
       tipoCambio: tasaDestino / tasaOrigen,
     };
   }
+
+  updateExchangeRate(currency: string, newRate: number): boolean {
+    if (!currency || !newRate) {
+      throw new BadRequestException('Tipo de monera y monto son obligatorios');
+    }
+    return this.changeRateService.updateExchangeRate(currency, newRate);
+  }
 }
