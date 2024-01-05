@@ -26,4 +26,17 @@ export class ChangeRateService {
     );
     return rateEntry ? rateEntry.rate : null;
   }
+
+  updateExchangeRate(currency: string, newRate: number): boolean {
+    const index = this.exchangeRates.findIndex(
+      (entry) => entry.currency === currency,
+    );
+
+    if (index !== -1) {
+      this.exchangeRates[index].rate = newRate;
+      return true;
+    }
+
+    return false;
+  }
 }
