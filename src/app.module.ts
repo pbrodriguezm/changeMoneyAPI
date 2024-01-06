@@ -7,7 +7,7 @@ import { ChangeModule } from './modules/change.module';
 import { AuthService } from './services/auth.service';
 
 @Module({
-  imports: [AuthModule, ChangeModule, AppModule],
+  imports: [AuthModule, ChangeModule],
   controllers: [AppController],
   providers: [AppService, JwtStrategy, AuthService],
 })
