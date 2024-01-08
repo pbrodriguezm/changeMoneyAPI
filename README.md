@@ -28,7 +28,7 @@
 
 ## Demo
 
-Check out the live demo: [Change Money API Demo](https://ec2-18-237-116-245.us-west-2.compute.amazonaws.com/api)
+Check out the live demo: [Change Money API Demo]([https://ec2-18-237-116-245.us-west-2.compute.amazonaws.com/api](http://ec2-18-237-116-245.us-west-2.compute.amazonaws.com:3000/api))
 
 ## Autor
 
