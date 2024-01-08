@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to EC2
         run: |
           echo "Iniciando despliegue..."
-          sshpass -p 'LA_CLAVE' \
+          sshpass -p 'LA_CLAVE_' \
             ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com '
               echo "Ingresando al directorio..." &&
               cd /home/ubuntu/changeMoneyAPI &&
