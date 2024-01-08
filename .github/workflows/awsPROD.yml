@@ -16,7 +16,18 @@ jobs:
       - name: Deploy to EC2
         run: |
           echo "Iniciando despliegue..."
-          sshpass -p 'Halion2012' \
-            ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com 'echo "Ingresando al directorio..." && cd /home/ubuntu/changeMoneyAPI && echo "Actualizando repositorio..." && git pull origin main && echo "Instalando dependencias..." && npm install && echo "Reiniciando servidor..." && pm2 restart backend'
+          sshpass -p 'LA_CLAVE' \
+            ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com '
+              echo "Ingresando al directorio..." &&
+              cd /home/ubuntu/changeMoneyAPI &&
+              echo "Actualizando repositorio..." &&
+              git pull origin main &&
+              source ~/.nvm/nvm.sh &&
+              nvm use 16 &&
+              export PATH=$PATH:~/.nvm/versions/node/v16.19.0/bin &&
+              echo "Instalando dependencias..." &&
+              npm install &&
+              echo "Reiniciando servidor..." &&
+              pm2 restart backend'
         env:
-          SSHPASS: Halion2012
+          SSHPASS: LA_CLAVE
