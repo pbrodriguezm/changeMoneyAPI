@@ -24,7 +24,29 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository. Minimal Node version 16.X, 
+
+## Demo
+
+Check out the live demo: [Change Money API Demo](https://ec2-18-237-116-245.us-west-2.compute.amazonaws.com/api)
+
+## Autor
+
+Patrick Rodriguez
+
+## Docker
+
+If you prefer to run the app using Docker, follow these steps:
+
+```bash
+$ docker build -t change-money-api .
+```
+
+```bash
+$ docker run -p 3000:3000 -d change-money-api
+```
+
+This will start the application in a Docker container, and you can access it at http://localhost:3000.
 
 ## Installation
 
@@ -71,3 +93,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
