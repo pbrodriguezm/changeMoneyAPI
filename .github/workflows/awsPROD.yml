@@ -16,6 +16,6 @@ jobs:
       - name: Deploy to EC2
         run: |
           sshpass -p 'Halion2012' \
-            ssh ubuntu@ec2-18-237-116-245.us-west-2.compute.amazonaws.com 'cd /home/ubuntu/changeMoneyAPI && git pull origin main && nvm use 16 && npm i && pm2 restart backend'
+            ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com 'cd /home/ubuntu/changeMoneyAPI && git pull origin main && nvm use 16 && npm install && pm2 restart backend'
         env:
           SSHPASS: Halion2012
