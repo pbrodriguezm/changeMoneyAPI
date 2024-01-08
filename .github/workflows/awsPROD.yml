@@ -15,7 +15,8 @@ jobs:
 
       - name: Deploy to EC2
         run: |
+          echo "Iniciando despliegue..."
           sshpass -p 'Halion2012' \
-            ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com 'cd /home/ubuntu/changeMoneyAPI && git pull origin main && npm install && pm2 restart backend'
+            ssh -o StrictHostKeyChecking=no -l ubuntu ec2-18-237-116-245.us-west-2.compute.amazonaws.com 'echo "Ingresando al directorio..." && cd /home/ubuntu/changeMoneyAPI && echo "Actualizando repositorio..." && git pull origin main && echo "Instalando dependencias..." && npm install && echo "Reiniciando servidor..." && pm2 restart backend'
         env:
           SSHPASS: Halion2012
